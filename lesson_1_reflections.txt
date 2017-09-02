@@ -1,0 +1,59 @@
+Questions:
+1. How to easily merge a branch that has conflicts in it?
+2. Figure out how to launch emacs from within gitbash
+e.g. add alias to your bash_profile like
+alias emacs='C:/emacs-25.2-x86_64/bin/runemacs.exe'
+maybe try the -insecure -n -w switches (see below)
+
+
+You can use fc (file compare) on windows or diff on *nix to compare two files.
+
+The output isn't great.
+$ git init
+$ git status
+$ git log
+$ git log --stat
+$ git add cake-recipe.txt //add a file
+$ git add frosting-recipe.txt //add another file
+Then you see what's been added
+$ git status
+$ git reset frosting-reciepe.txt //unstages the single file
+Once you're happy with what's in the staging area you can commit:
+$ git commit 
+
+
+$ git diff //current and previous version -u patch (this is default)
+$ git diff sdf87sd987sdaf8s789d sadf87sa9dfsdfasdf //two commits
+$ git clone https://github.com/udacity/astroids.git
+
+Commit messages style guide from Udacity.
+http://udacity.github.io/git-styleguide/
+Separate subject from body with a blank line
+Limit the subject line to 52 characters
+Capitalize the subject line
+Do not end the subject line with a period
+Use the imperative mood in the subject line
+Wrap the body at 74 characters
+Use the body to explain what and why vs. how
+
+
+$ git config --list
+$ git config --global color.ui auto
+$ git config --global user.name "Jakub Jaworski"
+$ git config --global user.email "jakubjaworski@gmail.com" 
+$ git config --global core.editor "'C:/emacs-25.2-x86_64/bin/runemacs.exe' -n -w" //new window, wait for closing, escape spaces with \
+$ git config --global push.default upstream
+$ git config --global merge.conflictstyle diff3
+
+Search for specific commit message
+$ git log --all --grep='Revert'   /nix only
+
+$ git checkout df87sd987sdaf8s789d
+$ git diff //compares current state to most recent commit
+$ git diff --staged //see diff between staging and most recent commit... ie after issuing git add .
+$ git reset [file]//unstages
+$ git reset --hard  //gets rid of any changes
+$ git commit -am "Commit message" //commit all changes with a message
+
+https://classroom.udacity.com/courses/ud775/lessons/2980038599/concepts/33331589510923
+--instructions for setting workspace on Mac/Linux
